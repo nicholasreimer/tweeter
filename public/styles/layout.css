@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  /* width: 90%; */
   padding-left: 2em;
   padding-right: 2em;
   display: flex;

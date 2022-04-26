@@ -10,9 +10,9 @@ const express = require("express");
 const tweetsRoutes = express.Router();
 
 module.exports = function (DataHelpers) {
-//-------------------------------------------------------------------------------------------------------------------
-// ROUTE REQUESTS: //
-//------------------
+  //-------------------------------------------------------------------------------------------------------------------
+  // ROUTE REQUESTS: //
+  //------------------
 
   // GET: displays the tweets to the client
   tweetsRoutes.get("/", function (req, res) {
@@ -61,9 +61,3 @@ module.exports = function (DataHelpers) {
 };
 
 //-------------------------------------------------------------------------------------------
-// POST: receives a submitted tweet from a client from the form in the index.html file
-tweetsRoutes.post("/tweets", function (req, res) {
-  if (!req.body.text) {
-    res.status(400).json({ error: "invalid request: no data in POST body" });
-    return;
-  }
