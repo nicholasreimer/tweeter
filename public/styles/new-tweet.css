@@ -13,7 +13,6 @@ textarea {
   border: none;
   border-bottom: 2px solid black;
   width: 100%;
-  font-weight: 600;
   font-size: 0.9em;
 }
 
@@ -34,4 +33,5 @@ textarea {
 
 h3 {
   font-family: "IBM Plex Mono", monospace;
+  color: rgb(0, 0, 0);
 }

@@ -1,0 +1,43 @@
+.tweetheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+article.tweet {
+  border-bottom: 2px solid black;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.tweetfooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding-top: 10px;
+}
+
+.tweetcontainer {
+  padding: 13px;
+  border: 2px solid black;
+}
+
+.tweetcontainer:hover {
+  box-shadow: 10px 7px black;
+}
+
+.fa-retweet {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.fa-flag:hover {
+  color: rgb(12, 107, 210);
+}
+.fa-retweet:hover {
+  color: rgb(12, 107, 210);
+}
+.fa-heart:hover {
+  color: rgb(12, 107, 210);
+}
