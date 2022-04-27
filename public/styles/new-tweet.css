@@ -9,6 +9,7 @@ form {
 }
 
 textarea {
+  resize: none;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid black;
@@ -16,8 +17,12 @@ textarea {
   font-size: 0.9em;
 }
 
+textarea:focus {
+  outline: none;
+}
+
 .new-tweet {
-  width: 85%;
+  width: 90%;
 }
 
 .footer {

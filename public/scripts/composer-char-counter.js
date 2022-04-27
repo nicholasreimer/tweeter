@@ -1,6 +1,7 @@
 //Composer Charchter Count: responsible for the character counter.
 
 $(document).ready(function () {
+  
   $("#tweet-text").keyup(function () {
     const charchters = $(this).val();
     const counter = 140 - charchters.length;

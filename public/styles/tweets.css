@@ -14,11 +14,18 @@ article.tweet {
 .tweetfooter {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: space-between;
   padding-top: 10px;
 }
 
+#tweets-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
 .tweetcontainer {
+  width: 100%;
   padding: 13px;
   border: 2px solid black;
 }
@@ -33,10 +40,10 @@ article.tweet {
 }
 
 .fa-flag:hover {
-  color: rgb(12, 107, 210);
+  color: rgb(96, 168, 245);
 }
 .fa-retweet:hover {
-  color: rgb(12, 107, 210);
+  color: rgb(96, 168, 245);
 }
 .fa-heart:hover {
   color: rgb(12, 107, 210);
