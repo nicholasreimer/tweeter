@@ -3,11 +3,18 @@
 $(document).ready(function () {
   $("#tweet-text").keyup(function () {
     const charchters = $(this).val();
-    const counter = charchters.length;
+    const counter = 140 - charchters.length;
 
-    $(".counter").text(140 - counter);
+    $(".counter").text(counter);
+
+    if (counter < 0) {
+      $(".counter").css("color", "red");
+    } else {
+      $(".counter").css("color", "black");
+    }
   });
 });
 
-//Using jQuery and an appropriate selector, register an event handler to the textarea element for the form inside of the .new-tweet section.
-// use the keyup event and count the number of characters.
+// tree traversal method:
+// -let $counter = $(this).siblings().children()[index]
+// -$counter.innerText = count

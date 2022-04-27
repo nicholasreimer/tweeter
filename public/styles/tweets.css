@@ -24,7 +24,7 @@ article.tweet {
 }
 
 .tweetcontainer:hover {
-  box-shadow: 10px 7px black;
+  box-shadow: 10px 7px rgb(12, 107, 210);
 }
 
 .fa-retweet {
