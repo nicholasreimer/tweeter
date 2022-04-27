@@ -1,18 +1,8 @@
-/*
-  -Client-side JS logic goes here
-  -jQuery is already loaded
-  -Reminder: Use (and do all your DOM work in) jQuery's document ready function
-  
-  -Within the client.js file, we're going to define a function createTweetElement that takes in a 
-   tweet object and is responsible for returning a tweet <article> element containing the entire 
-   HTML structure of the tweet.
- */
+//Client-side JS Logic:
 
-// Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function () {
+//--------------------------------------------------------------------------------------------------  
   
-
-
 const tweetObjArray = [
   {
     "user": {
@@ -55,7 +45,6 @@ function createTweetElement(tweetObj) {
   //create the foundation for a new tweet in the html
   let $newTweet = $(`<article class="tweetcontainer"></article>`);
 
-  //this var is specific to this function only
   const htmlContent = `<header class="tweetheader">
   <img src=${tweetObj.user.avatars}>
   <div>${tweetObj.user.name}</div>
@@ -88,20 +77,38 @@ for(element of tweetObjArray){
 
 renderTweets(tweetObjArray);
 
+
+
+//-----------------------------------------------------------------
+
+$( "#create-tweet" ).submit(function( event ) {
+  event.preventDefault();
+  
+  //Serialize the form data and send it to the server as a query string.
+  const $inputs = $("#tweet-text").serialize();
+
+  console.log("$inputs", $inputs)
+
+ $.ajax({
+  type: "POST",
+  url: "http://localhost:8080/tweets/",
+  data: $inputs,
+})
+.then(() => {
+console.log("have u made it this far?")
+})
+
 });
-/*
-const $tweet = createTweetElement(tweetData);
 
-// // Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
 
-// // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-$(document).ready(function () {
-  $(".tweets-container").prepend($tweet);
+//after the ajax post, use jquerry to reload the page via load()
+
+
+//MUST BE BOTTOM!
 });
-*/
 
-//$(()=> {})
+
+
 
 
 

@@ -73,8 +73,8 @@
     <main class="container">
       <section class="new-tweet">
         <h3>Compose Tweet</h2>
-        <form method="post" action="/tweets/">
-       
+        <form id="create-tweet" action="/tweets/" method="POST">
+       <input type="hidden" value="Nico Suave" id="username">
           <textarea name="text" placeholder="Whats on your mind" id="tweet-text"></textarea>
           <div class="footer">
             <button type="submit">Tweet</button>
@@ -82,7 +82,7 @@
           </div>
         </form>
       </section>
-      
+
 <section class="tweets-container">
 
 </section>
