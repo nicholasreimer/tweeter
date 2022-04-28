@@ -66,6 +66,18 @@ $( "#create-tweet" ).submit(function( event ) {
   //Serialize the form data and send it to the server as a query string.
   const $inputs = $("#tweet-text").serialize();
 
+
+//remove the "text=" that is inside of $inputs and check its length to be sure its under 140
+if($inputs.replace("text=", "").length > 140) {
+  alert("your tweet is too long")
+  return;
+}
+
+if(!$inputs.replace("text=", "")){
+  alert("your submission is non exsistent")
+  return;
+}
+
  $.ajax({
   type: "POST",
   url: "http://localhost:8080/tweets/",
@@ -74,6 +86,7 @@ $( "#create-tweet" ).submit(function( event ) {
 .then(() => {
 console.log("have u made it this far?")
 })
+
 
 });
 //after the ajax post, use jquerry to reload the page via load()
