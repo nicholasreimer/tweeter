@@ -52,6 +52,6 @@ article.tweet {
   color: rgb(12, 107, 210);
 }
 
-/* Desktop styles */
+/* Desktop styles--------------------------------------- */
 @media only screen and (min-width: 1024px) {
 }

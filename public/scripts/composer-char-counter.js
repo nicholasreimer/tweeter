@@ -1,7 +1,6 @@
-//Composer Charchter Count: responsible for the character counter.
+//Composer Charchter Count: responsible for the tweeter character counter.
 
 $(document).ready(function () {
-  
   $("#tweet-text").keyup(function () {
     const charchters = $(this).val();
     const counter = 140 - charchters.length;
@@ -16,6 +15,7 @@ $(document).ready(function () {
   });
 });
 
-// tree traversal method:
+//NOTE:
+// to do the above via a tree traversal method:
 // -let $counter = $(this).siblings().children()[index]
 // -$counter.innerText = count

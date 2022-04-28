@@ -12,9 +12,7 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+/* Related to Global Layout: */
 
 body {
   padding-top: 100px;
@@ -47,7 +45,7 @@ body {
   }
 }
 
-/* Desktop styles */
+/* Desktop styles--------------------------------------- */
 @media only screen and (min-width: 1024px) {
   .container {
     padding-left: 15vh;

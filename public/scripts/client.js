@@ -1,4 +1,4 @@
-//Client-side JS Logic:
+//Client-Side JS Logic:
 
 $(document).ready(function () {
   //--------------------------------------------------------------------------------------------------
@@ -17,22 +17,20 @@ $(document).ready(function () {
     let $newTweet = $(`<article class="tweetcontainer"></article>`);
 
     const htmlContent = `<header class="tweetheader">
-  <img src=${tweetObj.user.avatars}>
+  <img src="${tweetObj.user.avatars}" />
   <div>${tweetObj.user.name}</div>
   <div>${tweetObj.user.handle}</div>
 </header>
-  <article class="tweet">
-    ${escape(tweetObj.content.text)}
-   </article>
-   <span></span>
-  <footer class="tweetfooter">
-   <div>${timeago.format(new Date())}</div>
+<article class="tweet">${escape(tweetObj.content.text)}</article>
+<span></span>
+<footer class="tweetfooter">
+  <div>${timeago.format(new Date())}</div>
   <div>
     <i class="fa-solid fa-flag"></i>
     <i class="fa-solid fa-retweet"></i>
     <i class="fa-regular fa-heart"></i>
   </div>
-  </footer>`;
+</footer>`;
 
     let tweetElement = $newTweet.append(htmlContent);
 
@@ -60,7 +58,6 @@ $(document).ready(function () {
     });
     //use jQuery to make a request to /tweets and receive the array of tweets as JSON.
   }
-
   loadTweets();
 
   //----------------------------------------------------------------------
@@ -72,13 +69,10 @@ $(document).ready(function () {
     //Serialize the form data and send it to the server as a query string.
     const $inputs = $("#tweet-text").serialize();
 
-    console.log($inputs);
-
     if ($(".error").is(":visible")) {
       $(".error").slideUp();
     }
 
-    //remove the "text=" that is inside of $inputs and check its length to be sure its under 140
     if ($inputs.replace("text=", "").length > 140) {
       $(".error").slideDown();
       return;
@@ -97,6 +91,4 @@ $(document).ready(function () {
       loadTweets();
     });
   });
-
-  //DOCUMENT READY
 });
