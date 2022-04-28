@@ -19,7 +19,7 @@
 }
 
 #nav-bar i {
-  color: black;
+  color: rgb(12, 107, 210);
 }
 
 h2 {
@@ -32,4 +32,8 @@ h2 {
   background-color: #ffffff;
   font-family: "IBM Plex Mono", monospace;
   font-size: 50px;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
 }

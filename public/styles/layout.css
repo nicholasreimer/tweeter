@@ -25,11 +25,31 @@ body {
 }
 
 .container {
-  /* width: 90%; */
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 0em;
+  padding-right: 0em;
   display: flex;
   align-items: center;
   flex-direction: column;
   color: #545149;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  .container {
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    color: #545149;
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .container {
+    padding-left: 15vh;
+  }
 }

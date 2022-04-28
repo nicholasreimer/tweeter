@@ -1,4 +1,4 @@
-.header1 {
+.main-header {
   background: rgb(12, 107, 210);
   height: 400px;
   width: 100%;
@@ -8,4 +8,34 @@
   justify-content: center;
   z-index: 1;
   background-image: url("./background-image/bright-squares.png");
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .main-header {
+    height: 40vh;
+    width: 50vh;
+    display: flex;
+    align-items: center;
+    background-image: url("./background-image/bright-squares.png");
+    margin-top: 9rem;
+    margin-left: 3rem;
+  }
+
+  .header-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    width: 20vh;
+  }
+
+  img {
+    max-width: 23vh;
+    max-height: 23vh;
+  }
+
+  h3 {
+    margin-top: 1vh;
+  }
 }
