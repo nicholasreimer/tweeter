@@ -2,45 +2,9 @@
 
 $(document).ready(function () {
 //--------------------------------------------------------------------------------------------------  
-  
-const tweetObjArray = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1650922564145
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1651008964145
-  }
-];
-
-const tweetData = {
-  user: {
-    name: "Newton",
-    avatars: "https://i.imgur.com/73hZDYK.png",
-    handle: "@SirIsaac",
-  },
-  content: {
-    text: "If I have seen further it is by standing on the shoulders of giants",
-  },
-  created_at: 1461116232227,
-};
 
 //-----------------------------------------------------------------
+//CREATE TWEET ELEMENT:
 function createTweetElement(tweetObj) {
   //create the foundation for a new tweet in the html
   let $newTweet = $(`<article class="tweetcontainer"></article>`);
@@ -55,7 +19,7 @@ function createTweetElement(tweetObj) {
    </article>
    <span></span>
   <footer class="tweetfooter">
-   <div>10 days ago</div>
+   <div>${timeago.format(new Date())}</div>
   <div>
     <i class="fa-solid fa-flag"></i>
     <i class="fa-solid fa-retweet"></i>
@@ -69,25 +33,38 @@ function createTweetElement(tweetObj) {
 }
 
 //---------------------------------------------------------------
+//RENDER TWEETS:
 function renderTweets(tweetObjArray) {
 for(element of tweetObjArray){
   $(".tweets-container").append(createTweetElement(element));
 }
 };
 
-renderTweets(tweetObjArray);
-
-
-
 //-----------------------------------------------------------------
+//LOAD TWEETS: responsible for fetching tweets from the /tweets page
+
+function loadTweets(){
+
+ $.ajax({
+  type: "GET",
+  url: "http://localhost:8080/tweets/",
+})
+.then((response) => {
+  renderTweets(response);
+})
+//use jQuery to make a request to /tweets and receive the array of tweets as JSON.
+}
+
+loadTweets();
+
+//----------------------------------------------------------------------
+//FORM EVENT HANDLER and AJAX POST REQUEST
 
 $( "#create-tweet" ).submit(function( event ) {
   event.preventDefault();
   
   //Serialize the form data and send it to the server as a query string.
   const $inputs = $("#tweet-text").serialize();
-
-  console.log("$inputs", $inputs)
 
  $.ajax({
   type: "POST",
@@ -99,8 +76,6 @@ console.log("have u made it this far?")
 })
 
 });
-
-
 //after the ajax post, use jquerry to reload the page via load()
 
 
