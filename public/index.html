@@ -83,6 +83,9 @@
         <form id="create-tweet" action="/tweets/" method="POST">
        <input type="hidden" value="Nico Suave" id="username">
           <textarea name="text" placeholder="Whats on your mind" id="tweet-text"></textarea>
+
+          <div class="error hide-error" >Your submission is invalid</div>
+
           <div class="footer">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -93,7 +96,6 @@
 <section class="tweets-container">
 
 </section>
-
 
     </main>
   </body>

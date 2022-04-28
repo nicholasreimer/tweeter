@@ -2,6 +2,13 @@
 
 $(document).ready(function () {
 //--------------------------------------------------------------------------------------------------  
+//ESCAPE FUNCTION: used for eliminating Cross site scripting weaknesses
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 //-----------------------------------------------------------------
 //CREATE TWEET ELEMENT:
@@ -15,7 +22,7 @@ function createTweetElement(tweetObj) {
   <div>${tweetObj.user.handle}</div>
 </header>
   <article class="tweet">
-    ${tweetObj.content.text}
+    ${escape(tweetObj.content.text)}
    </article>
    <span></span>
   <footer class="tweetfooter">
@@ -36,7 +43,7 @@ function createTweetElement(tweetObj) {
 //RENDER TWEETS:
 function renderTweets(tweetObjArray) {
 for(element of tweetObjArray){
-  $(".tweets-container").append(createTweetElement(element));
+  $(".tweets-container").prepend(createTweetElement(element));
 }
 };
 
@@ -50,6 +57,7 @@ function loadTweets(){
   url: "http://localhost:8080/tweets/",
 })
 .then((response) => {
+$(".tweets-container").empty();
   renderTweets(response);
 })
 //use jQuery to make a request to /tweets and receive the array of tweets as JSON.
@@ -66,15 +74,18 @@ $( "#create-tweet" ).submit(function( event ) {
   //Serialize the form data and send it to the server as a query string.
   const $inputs = $("#tweet-text").serialize();
 
+if($(".error").is(":visible")) {
+  $(".error").slideUp();
+} 
 
 //remove the "text=" that is inside of $inputs and check its length to be sure its under 140
 if($inputs.replace("text=", "").length > 140) {
-  alert("your tweet is too long")
+ $(".error").slideDown();
   return;
 }
 
 if(!$inputs.replace("text=", "")){
-  alert("your submission is non exsistent")
+  $(".error").slideDown();
   return;
 }
 
@@ -85,11 +96,10 @@ if(!$inputs.replace("text=", "")){
 })
 .then(() => {
 console.log("have u made it this far?")
+loadTweets();
 })
 
-
 });
-//after the ajax post, use jquerry to reload the page via load()
 
 
 //MUST BE BOTTOM!
