@@ -24,7 +24,7 @@ $(document).ready(function () {
 <article class="tweet">${escape(tweetObj.content.text)}</article>
 <span></span>
 <footer class="tweetfooter">
-  <div>${timeago.format(new Date())}</div>
+  <div>${timeago.format(tweetObj.created_at)}</div>
   <div>
     <i class="fa-solid fa-flag"></i>
     <i class="fa-solid fa-retweet"></i>
