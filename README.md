@@ -19,6 +19,8 @@ I hope you enjoy it and appreciate all that has to offer.
 - Express
 - Node 5.10.x or above
 
+![Tweeter Desktop](https://github.com/nicholasreimer/tweeter/blob/master/Screenshots/tweeter-desktop.png?raw=true)
+
 Click here for Screenshots of the Project!
 https://github.com/nicholasreimer/tweeter/blob/master/Screenshots/tweeter-desktop.png?raw=true
 
