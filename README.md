@@ -21,7 +21,4 @@ I hope you enjoy it and appreciate all that has to offer.
 
 ![Tweeter Desktop](https://github.com/nicholasreimer/tweeter/blob/master/Screenshots/tweeter-desktop.png?raw=true)
 
-Click here for Screenshots of the Project!
-https://github.com/nicholasreimer/tweeter/blob/master/Screenshots/tweeter-desktop.png?raw=true
-
-https://github.com/nicholasreimer/tweeter/blob/master/Screenshots/tweeter-mobile.png?raw=true
+![Tweeter Mobile](https://github.com/nicholasreimer/tweeter/blob/master/Screenshots/tweeter-mobile.png?raw=true)
